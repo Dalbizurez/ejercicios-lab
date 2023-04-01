@@ -33,10 +33,15 @@ def menu():
     match opcion:
         case "1":
             nombre = input("Ingrese su nombre completo: ")
-            resultado = procesarNombre(nombre)
+            resultado = ""
+            for x in procesarNombre(nombre):
+                resultado += x + "\n"
         case "2":
             telefono = input("Ingrese el numero de telefono a procesar: ")
-            resultado = procesarTelefono(telefono)
+            if telefono.find("+34"):
+                resultado = procesarTelefono(telefono)
+            else:
+                resultado = "Codigo de area faltante"
         case "3":
             cesta = input("Ingrese la lista de compras, separando cada objeto usando una coma: ")
             resultado = procesarCompra(cesta)
