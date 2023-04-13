@@ -28,7 +28,26 @@ def promedio(lista):
     resultado /= len(lista)
     return resultado 
 #Fin ejercicio 2
+
+# Ejercicio 3
+def invertir(vector):
+    inverso = []
+    for x in range(len(vector)-1, -1, -1):  
+        inverso.append(vector[x])
+    return inverso
+
+def invertir2(vector):
+    return vector[-1::-1]
+#Fin ejercicio 3
+
 print(impares_mayor3(numeros))
 print(impares_mayor3_2(numeros))
 
 print(promedio(eliminar_menor(numeros)))
+
+ingresado = []
+for x in range(0, 5):
+    ingresado.append(input(f"Ingrese el valor {x+1}: "))
+print(f"Ingreso {ingresado}")
+print(f"Inverso {invertir(ingresado)}")
+print(f"Inverso {invertir2(ingresado)}")
